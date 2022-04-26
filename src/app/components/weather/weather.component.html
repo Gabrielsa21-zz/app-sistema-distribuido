@@ -1,0 +1,63 @@
+<div class="title-weather">
+  Previsão do tempo: {{weatherData?.temp}}°c - 
+  {{dateTime}} horário de Brasília
+</div>
+<img class="w-full" src="https://live.staticflickr.com/65535/51897760570_4b7cea70af_b.jpg" alt="">
+
+<div class="card">
+  <div class="weather p-10">
+    <span *ngIf="weatherData?.weather?.code === 200">Trovoada com chuva fraca</span>
+    <span *ngIf="weatherData?.weather?.code === 201">Trovoada com chuva</span>
+    <span *ngIf="weatherData?.weather?.code === 202">Trovoada com chuva forte</span>
+
+    <span *ngIf="weatherData?.weather?.code === 230">Trovoada com chuvisco leve</span>
+    <span *ngIf="weatherData?.weather?.code === 231">Trovoada com chuvisco</span>
+    <span *ngIf="weatherData?.weather?.code === 232">Trovoada com chuvisco forte</span>
+    <span *ngIf="weatherData?.weather?.code === 233">Trovoada com granizo</span>
+
+    <span *ngIf="weatherData?.weather?.code === 300">Leve garoa</span>
+    <span *ngIf="weatherData?.weather?.code === 301">Chuvisco</span>
+    <span *ngIf="weatherData?.weather?.code === 302">Chuva forte</span>
+
+    <span *ngIf="weatherData?.weather?.code === 500">Chuva leve</span>
+    <span *ngIf="weatherData?.weather?.code === 501">Chuva moderada</span>
+    <span *ngIf="weatherData?.weather?.code === 502">Chuva pesada</span>
+    <span *ngIf="weatherData?.weather?.code === 511">Chuva congelante</span>
+    <span *ngIf="weatherData?.weather?.code === 520">Chuva de chuva leve</span>
+    <span *ngIf="weatherData?.weather?.code === 521">Chuva de banho</span>
+    <span *ngIf="weatherData?.weather?.code === 522">Chuva forte</span>
+
+    <span *ngIf="weatherData?.weather?.code === 600">Pouca neve</span>
+    <span *ngIf="weatherData?.weather?.code === 601">Neve</span>
+    <span *ngIf="weatherData?.weather?.code === 602">Neve pesada</span>
+
+    <span *ngIf="weatherData?.weather?.code === 610">Misture neve/chuva</span>
+    <span *ngIf="weatherData?.weather?.code === 611">granizo</span>
+    <span *ngIf="weatherData?.weather?.code === 612">granizo pesado</span>
+    <span *ngIf="weatherData?.weather?.code === 621">Trovoada com chuva fraca</span>
+    <span *ngIf="weatherData?.weather?.code === 622">Chuveiro de neve</span>
+    <span *ngIf="weatherData?.weather?.code === 623">Rajadas</span>
+
+    <span *ngIf="weatherData?.weather?.code === 700">Névoa</span>
+    <span *ngIf="weatherData?.weather?.code === 711">Fumaça</span>
+    <span *ngIf="weatherData?.weather?.code === 721">Confusão</span>
+    <span *ngIf="weatherData?.weather?.code === 731">Areia/poeira</span>
+    <span *ngIf="weatherData?.weather?.code === 741">Névoa</span>
+    <span *ngIf="weatherData?.weather?.code === 751">Névoa Congelante</span>
+
+    <span *ngIf="weatherData?.weather?.code === 800">Céu limpo</span>
+    <span *ngIf="weatherData?.weather?.code === 801">Poucas nuvens</span>
+    <span *ngIf="weatherData?.weather?.code === 802">Nuvens dispersas</span>
+    <span *ngIf="weatherData?.weather?.code === 803">Nuvens quebradas</span>
+    <span *ngIf="weatherData?.weather?.code === 804">Nuvens nubladas</span>
+
+    <span *ngIf="weatherData?.weather?.code === 900">Precipitação Desconhecida</span>
+  </div>
+  <div class="container-temp">
+    <div>{{weatherData?.temp}}</div>
+  </div>
+  <div class="card__city pt-12 font-size-21">{{weatherData?.city_name}}, {{weatherData?.country_code}}</div>
+  <div class="card__img">
+  </div>
+  <div class="text-info">dados obtidos de acordo com a sua localização!</div>
+</div>
